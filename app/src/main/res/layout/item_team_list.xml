@@ -8,13 +8,13 @@
     <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="@dimen/_16dp"
-        app:cardElevation="@dimen/_8dp">
+        android:clipToPadding="true"
+        app:cardCornerRadius="@dimen/_8dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/_16dp">
+            android:padding="@dimen/_8dp">
 
             <TextView
                 android:id="@+id/team_name"
@@ -25,7 +25,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="@string/team_name"
+                android:text="@{teamListViewModel.name}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

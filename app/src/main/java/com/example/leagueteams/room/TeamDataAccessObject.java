@@ -14,7 +14,6 @@ import java.util.List;
 @Dao
 public interface TeamDataAccessObject {
 
-
     @Insert
     void insert(TeamsEntity teamsEntity);
 

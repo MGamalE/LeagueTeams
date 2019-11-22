@@ -1,8 +1,12 @@
 package com.example.leagueteams.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 
+import com.example.leagueteams.util.DataTypeConverter;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -38,8 +42,13 @@ public class TeamsEntity {
     private String shortname;
     @SerializedName("name")
     private String name;
+
+    @Embedded
     @SerializedName("area")
     private AreaEntity area;
+
+    @ColumnInfo(name = "ListData")
+    @TypeConverters(DataTypeConverter.class)
     @SerializedName("squad")
     private List<SquadEntity> squad;
 

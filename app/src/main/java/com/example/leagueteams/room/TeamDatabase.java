@@ -14,6 +14,10 @@ import com.example.leagueteams.model.TeamsEntity;
 public abstract class TeamDatabase extends RoomDatabase {
 
     private static TeamDatabase instance;
+
+    public abstract TeamDataAccessObject teamDataAccessObject();
+
+
     private static RoomDatabase.Callback callback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
@@ -34,10 +38,8 @@ public abstract class TeamDatabase extends RoomDatabase {
         return instance;
     }
 
-    public abstract TeamDataAccessObject teamDataAccessObject();
-
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
-        private TeamDataAccessObject teamDataAccessObject;
+        TeamDataAccessObject teamDataAccessObject;
 
         private PopulateDbAsyncTask(TeamDatabase db) {
             teamDataAccessObject = db.teamDataAccessObject();

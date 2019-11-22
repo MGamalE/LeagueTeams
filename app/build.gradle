@@ -21,6 +21,10 @@ android {
     buildTypes.each {
         it.buildConfigField 'String', 'API_TOKEN', API_TOKEN
     }
+
+    dataBinding{
+        enabled=true
+    }
 }
 
 dependencies {
