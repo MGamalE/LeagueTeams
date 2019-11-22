@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">LeagueTeams</string>
+    <string name="team_name">Italy</string>
+    <string name="team_info">Team Info</string>
+    <string name="team_squad">Team Squad</string>
+    <string name="team_squad_name">Gabriel</string>
+    <string name="player_pos">Goalkeeper</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="team_address">Via Templari 11 Lecce 73100</string>
+    <string name="team_color">Yellow / Red / Navy Blue</string>
+    <string name="color">Colors</string>
+    <string name="team_venue">Venue</string>
+    <string name="venue">Venue</string>
+    <string name="web">http://www.uslecce.it</string>
+    <string name="phone">+39 (0832) 240211</string>
 </resources>

@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="TextAppearance" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/_18sp</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+
 </resources>
