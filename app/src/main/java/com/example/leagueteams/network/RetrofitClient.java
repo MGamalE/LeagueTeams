@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.example.leagueteams.BuildConfig;
 import com.example.leagueteams.model.LeagueTeamsResponse;
-import com.example.leagueteams.model.TeamsEntity;
+import com.example.leagueteams.model.TeamEntity;
 import com.example.leagueteams.util.ServiceRoutes;
 
 import java.io.IOException;
@@ -55,7 +55,7 @@ public class RetrofitClient {
         return retrofitService.getLeagueTeamList(id);
     }
 
-    public Call<TeamsEntity> getTeamDetails(int id) {
+    public Call<TeamEntity> getTeamDetails(int id) {
         return retrofitService.getTeamDetails(id);
     }
 

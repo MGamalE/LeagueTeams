@@ -7,13 +7,13 @@ import java.util.List;
 public class LeagueTeamsResponse {
 
     @SerializedName("teams")
-    private List<TeamsEntity> teams;
+    private List<TeamEntity> teams;
 
-    public List<TeamsEntity> getTeams() {
+    public List<TeamEntity> getTeams() {
         return teams;
     }
 
-    public void setTeams(List<TeamsEntity> teams) {
+    public void setTeams(List<TeamEntity> teams) {
         this.teams = teams;
     }
 }

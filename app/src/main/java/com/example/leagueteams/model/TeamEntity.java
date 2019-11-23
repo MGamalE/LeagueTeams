@@ -5,19 +5,18 @@ import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.example.leagueteams.util.DataTypeConverter;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-@Entity(tableName = "team_table")
-public class TeamsEntity {
+public class TeamEntity implements Parcelable {
 
-    @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
     private int id;
-
     @SerializedName("lastUpdated")
     private String lastupdated;
     @SerializedName("venue")
@@ -42,16 +41,42 @@ public class TeamsEntity {
     private String shortname;
     @SerializedName("name")
     private String name;
-
-    @Embedded
     @SerializedName("area")
     private AreaEntity area;
-
-    @ColumnInfo(name = "ListData")
-    @TypeConverters(DataTypeConverter.class)
     @SerializedName("squad")
     private List<SquadEntity> squad;
 
+
+    public static final Creator<TeamEntity> CREATOR = new Creator<TeamEntity>() {
+        @Override
+        public TeamEntity createFromParcel(Parcel in) {
+            return new TeamEntity(in);
+        }
+
+        @Override
+        public TeamEntity[] newArray(int size) {
+            return new TeamEntity[size];
+        }
+    };
+
+    protected TeamEntity(Parcel in) {
+        id = in.readInt();
+        lastupdated = in.readString();
+        venue = in.readString();
+        clubcolors = in.readString();
+        founded = in.readInt();
+        email = in.readString();
+        website = in.readString();
+        phone = in.readString();
+        address = in.readString();
+        cresturl = in.readString();
+        tla = in.readString();
+        shortname = in.readString();
+        name = in.readString();
+    }
+
+    public TeamEntity() {
+    }
 
     public List<SquadEntity> getSquad() {
         return squad;
@@ -171,5 +196,27 @@ public class TeamsEntity {
 
     public void setArea(AreaEntity area) {
         this.area = area;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(lastupdated);
+        dest.writeString(venue);
+        dest.writeString(clubcolors);
+        dest.writeInt(founded);
+        dest.writeString(email);
+        dest.writeString(website);
+        dest.writeString(phone);
+        dest.writeString(address);
+        dest.writeString(cresturl);
+        dest.writeString(tla);
+        dest.writeString(shortname);
+        dest.writeString(name);
     }
 }

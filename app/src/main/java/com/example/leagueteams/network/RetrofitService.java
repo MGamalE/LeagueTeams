@@ -1,7 +1,7 @@
 package com.example.leagueteams.network;
 
 import com.example.leagueteams.model.LeagueTeamsResponse;
-import com.example.leagueteams.model.TeamsEntity;
+import com.example.leagueteams.model.TeamEntity;
 import com.example.leagueteams.util.ServiceRoutes;
 
 import retrofit2.Call;
@@ -14,5 +14,5 @@ public interface RetrofitService {
     Call<LeagueTeamsResponse> getLeagueTeamList(@Path("id") int id);
 
     @GET(ServiceRoutes.TEAM)
-    Call<TeamsEntity> getTeamDetails(@Path("id") int id);
+    Call<TeamEntity> getTeamDetails(@Path("id") int id);
 }
